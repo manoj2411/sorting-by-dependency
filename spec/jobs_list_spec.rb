@@ -4,24 +4,32 @@ require 'jobs_list'
 
 RSpec.describe JobsList do
 
+  context 'invalid input file' do
+    ["", "inputs/file1", "file1", nil].each do |file|
+      it "\"#{file}\" should return invalid file error" do
+        expect { JobsList.new(file) }.to raise_error(JobsList::INVALID_FILE_ERROR)
+      end
+    end
+  end
+
   describe '#sorted_jobs' do
-    subject(:jobs_list) { JobsList.new }
+    subject(:jobs_list) { JobsList.new 'inputs/with_single_job' }
 
     context 'Valid data' do
 
-      it 'returns jobs in any order with no dependency' do
+      xit 'returns jobs in any order with no dependency' do
       end
 
-      it 'returns jobs in topogical order by given dependecies' do
+      xit 'returns jobs in topogical order by given dependecies' do
       end
     end
 
     context 'Invalid data' do
 
-      it 'returns error for circular dependency' do
+      xit 'returns error for circular dependency' do
       end
 
-      it 'returns error for self dependency' do
+      xit 'returns error for self dependency' do
       end
     end
 
