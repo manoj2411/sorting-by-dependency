@@ -7,4 +7,18 @@ require 'jobs_list'
 jobs_list = JobsList.new("inputs/with_single_job")
 puts jobs_list.sorted_jobs.inspect
 
+jobs_list = JobsList.new("inputs/with_no_dependency")
+puts jobs_list.sorted_jobs.inspect
+
+jobs_list = JobsList.new("inputs/with_simple_dependency")
+puts jobs_list.sorted_jobs.inspect
+
+jobs_list = JobsList.new("inputs/with_dependencies")
+puts jobs_list.sorted_jobs.inspect
+
+jobs_list = JobsList.new("inputs/with_self_dependency")
+puts jobs_list.sorted_jobs.inspect
+
+jobs_list = JobsList.new("inputs/with_circular_dependency")
+puts jobs_list.sorted_jobs.inspect
 
