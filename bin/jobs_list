@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__), "lib")
 
 require 'jobs_list'
 
-jobs_list = JobsList.new("")
-puts jobs_list.sorted_jobs
+jobs_list = JobsList.new("inputs/with_single_job")
+puts jobs_list.sorted_jobs.inspect
 
 
