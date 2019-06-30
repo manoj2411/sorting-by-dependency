@@ -27,8 +27,6 @@ RSpec.describe JobsList do
       it 'returns jobs in topogical order by given dependecies' do
         result = JobsList.new('inputs/with_dependencies').sorted_jobs
 
-        expect(result.length).to eq(6)
-
         {'b' => 'c', 'c' => 'f', 'd' => 'a', 'e' => 'b'}.each_pair do |job, dependency|
           expect(result.index(dependency)).to be < result.index(job)
         end
